@@ -6,7 +6,18 @@ organization := "com.github.sramirez"
 
 scalaVersion := "2.11.8"
 
-libraryDependencies += "org.apache.spark" %% "spark-mllib" % "2.0.0"
+libraryDependencies ++= Seq(
+
+  "org.apache.spark" % "spark-core_2.11" % "2.0.1" % "provided",
+  "org.apache.spark" % "spark-graphx_2.11" % "2.0.1" % "provided",
+  "org.apache.spark" % "spark-mllib_2.11" % "2.0.1" % "provided",
+  "org.apache.spark" % "spark-hive_2.11" % "2.0.1" % "provided",
+
+  //"com.holdenkarau" % "spark-testing-base_2.11" % "2.0.1_0.6.0" % "provided",
+  "org.scalatest" % "scalatest_2.11" % "2.2.2" % "provided",
+  "junit" % "junit" % "4.12" % "provided"
+)
+
 
 resolvers ++= Seq(
   "Apache Staging" at "https://repository.apache.org/content/repositories/staging/",
